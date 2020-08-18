@@ -204,11 +204,12 @@ def get_players_stats_list
   teams.each do |team|
     players_list.concat(game_hash[team][:players])
   end
+  binding.pry
   players_list
 end
 
 def find_player_with_biggest_shoe
-  get_players_stats_list.max
+  get_players_stats_list
 end
 
 def big_shoe_rebounds
