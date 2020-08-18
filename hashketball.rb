@@ -202,7 +202,7 @@ def get_players_stats_list
   players_list = []
   teams = game_hash.keys
   teams.each do |team|
-    players_list << game_hash[team][:players]
+    players_list.concat(game_hash[team][:players])
   end
   binding.pry
   players_list
