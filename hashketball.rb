@@ -181,6 +181,7 @@ def player_numbers(name)
   teams.each do |team|
     if game_hash[team][:team_name] == name 
       team_numbers_list = game_hash[team][name][:players][:number].map { |number| number }
+    end
   end
   team_numbers_list
 end
