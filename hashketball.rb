@@ -213,5 +213,5 @@ def find_player_with_biggest_shoe
 end
 
 def big_shoe_rebounds
-  
+  get_players_stats_list
 end
