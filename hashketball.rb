@@ -204,7 +204,6 @@ def get_players_stats_list
   teams.each do |team|
     players_list.concat(game_hash[team][:players])
   end
-  binding.pry
   players_list
 end
 
