@@ -155,16 +155,22 @@ def shoe_size(player_name)
 end
 
 def team_colors(name)
-  teams = game_hash.keys
-  teams.each do |team|
-    if game_hash[team][:team_name] == name
-      return game_hash[team][:colors]
-    end
-  end
+  game_hash[:home][:team_name] == name ? game_hash[:home][:colors] : game_hash[:away][:colors]
+  
+  #solution using each enumerable
+  #teams = game_hash.keys
+  #teams.each do |team|
+  # if game_hash[team][:team_name] == name
+  #    return game_hash[team][:colors]
+  #  end
+  #end
 end
 
 def team_names
-  return [game_hash[:home][:team_name], game_hash[:away][:team_name]]
-  teams = game_hash.keys
-  teams.map { |team| game_hash[team][:team_name] }
+  #simpler solution
+  [game_hash[:home][:team_name], game_hash[:away][:team_name]]
+  
+  #return using map to return new array of team names
+  #teams = game_hash.keys
+  #teams.map { |team| game_hash[team][:team_name] }
 end
