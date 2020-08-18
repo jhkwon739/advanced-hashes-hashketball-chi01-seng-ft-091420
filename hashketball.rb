@@ -175,6 +175,10 @@ def team_names
   #teams.map { |team| game_hash[team][:team_name] }
 end
 
-def player_numbers(team_name)
-  
+def player_numbers(name)
+  teams = game_hash.keys
+  teams.each do |team|
+    if game_hash[team][:team_name] == name 
+      game_hash[team][name][:players][:number].map { |number| number }
+  end    
 end
