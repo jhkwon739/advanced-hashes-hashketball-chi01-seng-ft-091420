@@ -209,5 +209,5 @@ def get_players_stats_list
 end
 
 def big_shoe_rebounds
-  get_players_stats_list
+  
 end
