@@ -198,11 +198,16 @@ def player_stats(p_name)
   end  
 end
 
-def get_players_mini_stats_list
- teams = game_hash.keys
-  teams. do |team|
-    
-    end
-  end  
+def get_players_stats_list
+  players_list = []
+  teams = game_hash.keys
+  teams.each do |team|
+    players_list << game_hash[team][:players]
+  end
+  binding.pry
+  players_list
 end
+
 def big_shoe_rebounds
+  get_players_stats_list
+end
