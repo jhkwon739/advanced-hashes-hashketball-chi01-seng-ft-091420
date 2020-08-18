@@ -180,7 +180,6 @@ def player_numbers(name)
   teams = game_hash.keys
   teams.each do |team|
     if game_hash[team][:team_name] == name
-      binding.pry
       game_hash[team][:players].each { |player| team_numbers_list << player[:number] }
     end
   end
