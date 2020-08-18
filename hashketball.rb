@@ -180,7 +180,7 @@ def player_numbers(name)
   teams = game_hash.keys
   teams.each do |team|
     if game_hash[team][:team_name] == name
-      team_numbers_list = game_hash[team][:players][:number].each { |number|  }
+      game_hash[team][:players][:number].each { |number| team_numbers_list << number }
     end
   end
   team_numbers_list
