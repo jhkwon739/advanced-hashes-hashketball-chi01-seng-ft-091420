@@ -1,3 +1,5 @@
+require 'pry'
+
 # Write your code below game_hash
 def game_hash
   {
@@ -127,3 +129,88 @@ def game_hash
 end
 
 # Write code here
+def num_points_scored(player_name)
+  #score = 0
+  teams = game_hash.keys
+  teams.each do |team|
+    game_hash[team][:players].each do |player|
+      if  player[:player_name] == player_name
+        #score = player[:points]
+        return player[:points]
+      end
+    end
+  end
+  #score
+end
+
+def shoe_size(player_name)
+  teams = game_hash.keys
+  teams.each do |team|
+    game_hash[team][:players].each do |player|
+      if  player[:player_name] == player_name
+        return player[:shoe]
+      end
+    end
+  end  
+end
+
+def team_colors(name)
+  game_hash[:home][:team_name] == name ? game_hash[:home][:colors] : game_hash[:away][:colors]
+  
+  #solution using each enumerable
+  #teams = game_hash.keys
+  #teams.each do |team|
+  # if game_hash[team][:team_name] == name
+  #    return game_hash[team][:colors]
+  #  end
+  #end
+end
+
+def team_names
+  #simpler solution
+  [game_hash[:home][:team_name], game_hash[:away][:team_name]]
+  
+  #return using map to return new array of team names
+  #teams = game_hash.keys
+  #teams.map { |team| game_hash[team][:team_name] }
+end
+
+def player_numbers(name)
+  #team_numbers_list = []
+  teams = game_hash.keys
+  teams.each do |team|
+    if game_hash[team][:team_name] == name
+      #game_hash[team][:players].each { |player| team_numbers_list << player[:number] }
+      return game_hash[team][:players].map { |player| player[:number] }
+    end
+  end
+  #team_numbers_list
+end
+
+def player_stats(p_name)
+  teams = game_hash.keys
+  teams.each do |team|
+    game_hash[team][:players].each do |player|
+      if  player[:player_name] == p_name
+        return player
+      end
+    end
+  end  
+end
+
+def get_players_stats_list
+  players_list = []
+  teams = game_hash.keys
+  teams.each do |team|
+    players_list.concat(game_hash[team][:players])
+  end
+  players_list
+end
+
+def find_player_with_biggest_shoe
+  player_stats = get_players_stats_list.max { |player1, player2| player1[:shoe] <=> player2[:shoe] }
+end
+
+def big_shoe_rebounds
+  find_player_with_biggest_shoe[:rebounds]
+end
