@@ -174,3 +174,7 @@ def team_names
   #teams = game_hash.keys
   #teams.map { |team| game_hash[team][:team_name] }
 end
+
+def player_numbers(team_name)
+  
+end
