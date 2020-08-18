@@ -197,3 +197,12 @@ def player_stats(p_name)
     end
   end  
 end
+
+def get_players_mini_stats_list
+ teams = game_hash.keys
+  teams. do |team|
+    
+    end
+  end  
+end
+def big_shoe_rebounds
