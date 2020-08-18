@@ -209,7 +209,6 @@ end
 
 def find_player_with_biggest_shoe
   player_stats = get_players_stats_list.max { |player1, player2| player1[:shoe] <=> player2[:shoe] }
-  player_stats
 end
 
 def big_shoe_rebounds
