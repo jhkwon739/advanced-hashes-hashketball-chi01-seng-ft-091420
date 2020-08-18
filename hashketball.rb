@@ -176,12 +176,13 @@ def team_names
 end
 
 def player_numbers(name)
-  team_numbers_list = []
+  #team_numbers_list = []
   teams = game_hash.keys
   teams.each do |team|
     if game_hash[team][:team_name] == name
-      game_hash[team][:players].each { |player| team_numbers_list << player[:number] }
+      #game_hash[team][:players].each { |player| team_numbers_list << player[:number] }
+      return game_hash[team][:players].map { |player| player[:number] }
     end
   end
-  team_numbers_list
+  #team_numbers_list
 end
